@@ -17,8 +17,8 @@ export default function LoginPage() {
   if (isLg) {
     // Versão Desktop (neste caso nada)
     return (
-      <div className="bg-primaryGreen flex justify-center items-center h-[100vh] w-[100vw]">
-        <div className="bg-secondaryBackground w-[90vw] h-[90vh] rounded-tl-[25px] rounded-bl-[25px] flex ">
+      <div className="bg-primaryGreen flex justify-center items-center h-[130vh] w-[100vw]">
+        <div className="bg-secondaryBackground w-[90vw] min-h-[110vh] h-auto rounded-tl-[25px] rounded-bl-[25px] flex overflow-hidden">
           <div className="flex items-start mt-7 ml-7 gap-3 h-px">
             <Image
               alt="valorim-icone"
@@ -29,11 +29,11 @@ export default function LoginPage() {
             />
             <h2 className="font-bold text-[24px]">Valorim</h2>
           </div>
-          <div className=" flex flex-col h-px">
-          <span className="absolute left-[400px] ml-8 mt-8 text-gray-400 ">Nao tem uma conta?</span>
-          <Submit title="Registrar" type="submit" href="/register" className="w-[100px] h-[40px] border rounded-[5px] bg-secondaryColor mt-6 cursor-pointer absolute left-[600px]" />
+          <div className=" flex flex-col h-[10vh]">
+          <span className="absolute left-[32%] xl:left-[30%] ml-8 mt-8 text-gray-400 ">Nao tem uma conta?</span>
+          <Submit title="Registrar" type="submit" href="/register" className="w-[100px] h-[40px] border rounded-[5px] bg-secondaryColor mt-6 cursor-pointer absolute left-[50%] xl:left-[45%]" />
           </div>
-          <div className=" w-[360px] h-[80vh] mt-3 flex flex-col justify-center items-center">
+          <div className=" h-[100vh] mt-3 flex flex-col justify-center items-center mr-[8%] xl:ml-[1%]">
             <div>
               <Text h1={"Faça seu Login."} h2={""} p={""} />
             </div>
@@ -52,13 +52,13 @@ export default function LoginPage() {
             </div>
             <Separator />
             <LoginForm />
-            <div className="flex flex-row items-center gap-13 w-full mt-2">
+            <div className="flex flex-row items-center gap-30 w-full mt-4 ml-[3%]">
             <Checkbox />
             <Link text={"Esqueceu a senha?"} />
             </div>
-            <Submit title={"Entrar"} type={"submit"} href={""} className="w-[320px] h-[58px] border rounded-xl bg-secondaryColor mt-6 cursor-pointer lg:justify-end lg:items-end lg:w-[360px] lg:h-14 lg:mb-7" />
+            <Submit title={"Entrar"} type={"submit"} href={""} className="w-full h-[58px] border rounded-xl bg-secondaryColor mt-3 cursor-pointer lg:justify-end lg:items-end lg:w-[415px] lg:h-[75px]" />
           </div>
-          <div className="w-[40vw] ml-40 xl:ml-50 bg-secondaryColor rounded-tl-[75px] rounded-bl-[75px] justify-items-center items-center">
+          <div className="lg:w-[40vw] h-[110vh] xl:w-[70vw] bg-secondaryColor rounded-tl-[75px] rounded-bl-[75px] justify-items-center flex flex-col items-center ml-auto">
             <div className="flex flex-col items-start mb-3 mt-20 justify-center">
               <span className="text-left text-backgroundClaro font-bold italic text-3xl">
                 O mercado financeiro{" "}
@@ -67,7 +67,7 @@ export default function LoginPage() {
                 ao seu alcance.
               </span>
             </div>
-            <div className="w-[30vw] h-[50vh] bg-backgroundClaro rounded-[50px]"></div>
+            <div className="w-[80%] h-[50vh] bg-backgroundClaro rounded-[50px]"></div>
           </div>
         </div>
       </div>
