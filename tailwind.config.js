@@ -12,6 +12,8 @@ module.exports = {
         backgroundClaro: "#f5f6fa", // Cinza Claro
         textClaro: "#333333", // Cinza Escuro
         secondaryBackground: "#F3F0E7", // bege
+        secondaryText: "E5E5E5", // Platinum
+        linkBlue: "#225991", // Azul 
       },
     },
   },
