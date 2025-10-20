@@ -10,7 +10,7 @@ interface GraphCardProps {
 
 const GraphCard: React.FC<GraphCardProps> = ({ title, image }) => {
     return (
-        <div className="flex flex-col items-center p-4 rounded-lg shadow">
+        <div className="flex flex-col items-center p-4 rounded-lg ">
             <h3 className="mb-2 text-lg font-semibold">{title}</h3>
             <Image
                 src={image}
