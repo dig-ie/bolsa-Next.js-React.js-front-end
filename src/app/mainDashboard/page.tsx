@@ -1,24 +1,15 @@
-
 "use client";
 
 import React, { useState } from "react";
 import PeriodButton from "@/components/PeriodButton/PeriodButton";
-import GraphCard from "@/components/GraphCards/GraphCard";
 import BalanceCard from "@/components/BalanceCard/BalanceCard";
 import ActionsFavorites from "@/components/ActionsFavorites";
+import PeriodChart from "@/components/GraphPeriods/PeriodChart";
 
 export default function MainDashboard() {
-    const [selectedPeriod, setSelectedPeriod] = useState("Anual");
+    const [selectedPeriod, setSelectedPeriod] = useState<"Diário" | "Semanal" | "Mensal" | "Anual">("Diário");
 
-    const periods = ["Diário", "Semanal", "Mensal", "Anual"];
-
-    const graphs = [
-        { title: "Diário", image: "/images/graph_switch.png" },
-        { title: "Semanal", image: "/images/graph_switch.png" },
-        { title: "Mensal", image: "/images/graph_switch.png" },
-        { title: "Anual", image: "/images/graph_switch.png" },
-    ];
-
+    const periods = ["Diário", "Semanal", "Mensal", "Anual"] as const;
 
     const ActionsFavoritesMocks = [
         { actionName: "PETR4", actionValue: "+1,22%" },
@@ -26,8 +17,6 @@ export default function MainDashboard() {
         { actionName: "ITUB4", actionValue: "+0,65%" },
     ];
 
-
-    const selectedGraph = graphs.find((graph) => graph.title === selectedPeriod);
     return (
         <div>
             <BalanceCard balance="R$50.000" futureBalance="R$1500.00" />
@@ -43,15 +32,8 @@ export default function MainDashboard() {
                 ))}
             </div>
 
-            {selectedGraph && (
-                <GraphCard title={selectedGraph.title} image={selectedGraph.image} />
-            )}
+            <PeriodChart period={selectedPeriod} />
             <ActionsFavorites actions={ActionsFavoritesMocks} />
         </div>
-
-
-
-
     );
-
 }
