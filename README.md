@@ -70,6 +70,7 @@ Utilizado o padrão abaixo para manter o histórico limpo e compreensível:
 5. Abra um Pull Request 🚀
 
 ---
+## docker build -t valorim-frontend .
 
 ## 📬 Contato
 

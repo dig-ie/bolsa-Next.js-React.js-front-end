@@ -1,5 +1,5 @@
 {
-  "name": "simulador-de-bolsa-de-valores",
+  "name": "BOLSA-NEXT-APP",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "packageManager": "yarn@4.10.3",
   "dependencies": {
     "@headlessui/react": "^2.2.1",
     "@hookform/resolvers": "^5.0.1",
