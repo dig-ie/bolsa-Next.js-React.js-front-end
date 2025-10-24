@@ -1,7 +1,7 @@
 import React from "react";
 import { LoginFormProps } from "./LoginFormprops";
 
-const LoginForm: React.FC<LoginFormProps> = ({ onlyEmail = false }) => {
+const LoginForm: React.FC<LoginFormProps> = ({ onlyEmail = false, emailLabel = "Email", emailPlaceholder = "usuário123@gmail.com", passwordLabel = "Senha", passwordPlaceholder = "********" }) => {
   return (
     <form  className="flex flex-col items-center gap-4">
       <div className="flex flex-col">
@@ -9,13 +9,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onlyEmail = false }) => {
           htmlFor="email"
           className="font-bold text-2xl text-textClaro sm:text-lg md:text-xl lg:text-xl text-left lg:mb-1"
         >
-          Email:
+          {emailLabel}:
         </label>
         <input
           id="email"
           type="email"
-          placeholder="usuário123@gmail.com"
-          className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-backgroundClaro shadow-md/40"
+          placeholder={emailPlaceholder}
+          className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-backgroundClaro lg:shadow-md/40"
           autoComplete="email"
         />
       </div>
@@ -25,13 +25,13 @@ const LoginForm: React.FC<LoginFormProps> = ({ onlyEmail = false }) => {
           htmlFor="senha"
           className="font-bold text-2xl text-textClaro sm:text-lg md:text-xl lg:text-xl text-left lg:mb-1"
         >
-          Senha:
+          {passwordLabel}:
         </label>
         <input
           id="senha"
           type="password"
-          placeholder="********"
-          className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-backgroundClaro shadow-md/40"
+          placeholder={passwordPlaceholder}
+          className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-backgroundClaro lg:shadow-md/40"
           autoComplete="current-password"
         />
       </div>
@@ -41,4 +41,4 @@ const LoginForm: React.FC<LoginFormProps> = ({ onlyEmail = false }) => {
 };
 
 export default LoginForm;
-//por algum motivo apareceu alteração da mudança dos componetes de app para src
+
