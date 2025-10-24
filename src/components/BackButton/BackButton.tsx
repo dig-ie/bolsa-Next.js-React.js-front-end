@@ -6,10 +6,11 @@ import {FaArrowLeft} from "react-icons/fa"
 
 const BackButton: React.FC<BackButtonProps> = ({ href }) => {
   return (
-    <Link href={href}>
-      <button className="w-[51px] h-[46px] rounded-xl bg-white cursor-pointer mt-5 ml-2.5">
-        {<FaArrowLeft className="w-[45px] text-[22px]" />}
-      </button>
+    <Link href={href} className="inline-flex items-center justify-center 
+        w-10 h-10 
+        rounded-[10px]
+        bg-backgroundClaro mt-3 ml-2">
+        {<FaArrowLeft className="w-[45px] text-[15px]" />}
     </Link>
   );
 };
