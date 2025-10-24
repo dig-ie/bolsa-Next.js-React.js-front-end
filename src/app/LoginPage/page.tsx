@@ -2,23 +2,39 @@
 import { useResponsive } from "@/hooks/useResponsive";
 import LoginContent from "@/components/LoginForm/LoginContent";
 import LoginForm from "@/components/LoginForm/LoginForm";
-import Button from "@/components/Button/Button";
-import Text from "@/components/Text/Text";
-import Link from "@/components/CustomLink/CustomLink";
-import Submit from "@/components/Submit/Submit";
+import Button from "@/components/SecondaryButton/SecondaryButton";
+import Link from "@/components/AuthLink/AuthLink";
+import Submit from "@/components/SubmitButton/SubmitButton";
 import Image from "next/image";
-import {Separator} from "@/components/Separator/Separator";
+import { Separator } from "@/components/Separator/Separator";
 import Checkbox from "@/components/CheckBox/CheckBox";
-// import BackButton from "../components/BackButton/BackButton";
+import React, { useState } from "react";
 
 export default function LoginPage() {
+  const authButtonPrimaryText = "Facebook"
+  const authButtonPrimaryHref = "https://pt-br.facebook.com/login/"
+  const authButtonSecondaryText = "Google"
+  const authButtonSecondaryHref = "https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&hl=pt_BR&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-687016799%3A1747074790770482"
+  const registerText = "Registrar"
+  const registerHref = "/register"
+  const submitTitle = "Entrar"
+  const forgotPasswordText = "Esqueceu a senha?"
+  const forgotPasswordHref = "/ForgetPassword"
+  const [keepConnected, setKeepConnected] = useState(false);
+  const handleKeepConnectedChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setKeepConnected(event.target.checked);
+    console.log("Manter conectado:", event.target.checked);
+  };
+
   const { isLg } = useResponsive();
 
   if (isLg) {
     // Versão Desktop (neste caso nada)
     return (
       <div className="bg-primaryGreen flex justify-center items-center h-[130vh] w-[100vw]">
-        <div className="bg-secondaryBackground w-[90vw] min-h-[110vh] h-auto rounded-tl-[25px] rounded-bl-[25px] flex overflow-hidden">
+        <div className="bg-secondaryBackground w-[90vw] h-[110vh] rounded-tl-[25px] rounded-bl-[25px] flex overflow-hidden">
           <div className="flex items-start mt-7 ml-7 gap-3 h-px">
             <Image
               alt="valorim-icone"
@@ -30,33 +46,47 @@ export default function LoginPage() {
             <h2 className="font-bold text-[24px]">Valorim</h2>
           </div>
           <div className=" flex flex-col h-[10vh]">
-          <span className="absolute left-[32%] xl:left-[30%] ml-8 mt-8 text-gray-400 ">Nao tem uma conta?</span>
-          <Submit title="Registrar" type="submit" href="/register" className="w-[100px] h-[40px] border rounded-[5px] bg-secondaryColor mt-6 cursor-pointer absolute left-[50%] xl:left-[45%]" />
+            <span className="absolute left-[32%] xl:left-[30%] ml-8 mt-8 text-gray-400 ">
+              Nao tem uma conta?
+            </span>
+            <Submit
+              title={registerText}
+              type="submit"
+              className="w-[100px] h-[40px] border rounded-[5px] bg-secondaryColor mt-6 cursor-pointer absolute left-[50%] xl:left-[45%]"
+            />
           </div>
           <div className=" h-[100vh] mt-3 flex flex-col justify-center items-center mr-[8%] xl:ml-[1%]">
-            <div>
-              <Text h1={"Faça seu Login."} h2={""} p={""} />
+            <div className="mb-6">
+              <h1 className="text-4xl font-bold">Faça seu Login.</h1>
             </div>
             <div className="flex flex-col justify-center items-center gap-4 mt-2">
               <Button
-                title={"Entrar pelo Facebook"}
-                href={"https://pt-br.facebook.com/login/"}
+                imageSrc="/images/facebook_icon.png"
+                title={authButtonPrimaryText}
+                destination={authButtonPrimaryHref}
               />
               <Button
                 imageSrc="/images/google_icon.png"
-                title={"Entrar pelo Google"}
-                href={
-                  "https://accounts.google.com/v3/signin/identifier?authuser=0&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&hl=pt_BR&service=accountsettings&flowName=GlifWebSignIn&flowEntry=AddSession&dsh=S-687016799%3A1747074790770482"
-                }
+                title={authButtonSecondaryText}
+                destination={authButtonSecondaryHref}
               />
             </div>
             <Separator />
             <LoginForm />
             <div className="flex flex-row items-center gap-30 w-full mt-4 ml-[3%]">
-            <Checkbox />
-            <Link text={"Esqueceu a senha?"} />
+              <Checkbox
+                checked={keepConnected}
+                onChange={handleKeepConnectedChange}
+                label={"Me mantenha conectado"}
+                id={"manter-conexao-id"}
+              />
+              <Link href={forgotPasswordHref} text={forgotPasswordText} />
             </div>
-            <Submit title={"Entrar"} type={"submit"} href={""} className="w-full h-[58px] border rounded-xl bg-secondaryColor mt-3 cursor-pointer lg:justify-end lg:items-end lg:w-[415px] lg:h-[75px]" />
+            <Submit
+              title={submitTitle}
+              type={"submit"}
+              className="w-full h-[58px] border rounded-xl bg-secondaryColor mt-3 cursor-pointer lg:justify-end lg:items-end lg:w-[415px] lg:h-[75px]"
+            />
           </div>
           <div className="lg:w-[40vw] h-[110vh] xl:w-[70vw] bg-secondaryColor rounded-tl-[75px] rounded-bl-[75px] justify-items-center flex flex-col items-center ml-auto">
             <div className="flex flex-col items-start mb-3 mt-20 justify-center">
@@ -75,5 +105,17 @@ export default function LoginPage() {
   }
 
   // Versão Mobile
-  return <LoginContent facebookTitle={"Facebook"} googleTitle={"Google"} />;
+
+  const loginContentProps = {
+    authButtonPrimaryText,
+    authButtonPrimaryHref,
+    authButtonSecondaryText,
+    authButtonSecondaryHref,
+    registerText,
+    registerHref,
+    submitTitle,
+    forgotPasswordText,
+    forgotPasswordHref,
+  };
+  return <LoginContent {...loginContentProps} />;
 }
