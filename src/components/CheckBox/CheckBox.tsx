@@ -1,18 +1,26 @@
 import React from "react";
+import { CheckBoxProps } from "./CheckBoxProps";
 
-const CheckBox: React.FC = () => {
+const CheckBox: React.FC<CheckBoxProps> = ({ 
+    checked, 
+    onChange, 
+    label, 
+    id 
+}) => {
     return (
-        <form>
-            <label className=" whitespace-nowrap overflow-hidden">
-                <input type="checkbox" 
-                className="scale-100 mr-2 "
+            <div className="flex items-center">
+             <input type="checkbox"  id={id}
+            checked={checked}
+            onChange={onChange}
+                className="scale-100 mr-2 cursor-pointer "
             />
-            <span className="font-bold text-[13px]">
-            Me mantenha conectado
-            </span>
+            <label 
+                htmlFor={id} 
+                className="text-sm font-medium"
+            >
+                {label}
             </label>
-        </form>
-
+            </div>
     );
  };
 
