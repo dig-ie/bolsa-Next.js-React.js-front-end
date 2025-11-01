@@ -15,6 +15,7 @@ export default function LoginPage() {
   }, []);
 
   // desktop version - só renderiza após a montagem para evitar mismatch de hidratação
+  // fix
   if (isMounted && isLg) {
     return (
       <div className="bg-primaryGreen flex justify-center items-center h-[130vh] w-screen">
