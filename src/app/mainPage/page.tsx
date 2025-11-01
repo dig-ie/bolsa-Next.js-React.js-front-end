@@ -9,7 +9,7 @@ import Header from "../../components/Header/Header";
 //   buttonTitle?: string;
 // };
 
-const MainPage: React.FC = ({}) => {
+const MainPage: React.FC = ({ }) => {
   return (
     <main>
       <Header />

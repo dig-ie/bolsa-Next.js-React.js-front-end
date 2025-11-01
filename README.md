@@ -1,5 +1,4 @@
-# 📈✅ Simulador de Bolsa de Valores - Valorim
-
+# 📈✅ Valorim - Simulador de Bolsa de Valores
 Simulador educacional e visual de mercado financeiro, com cotações fictícias variando em tempo real. Ideal para praticar conceitos como compra, venda e análise de gráficos de ativos.
 
 ---
@@ -12,6 +11,8 @@ Simulador educacional e visual de mercado financeiro, com cotações fictícias 
 - Chart.js
 - Axios
 
+### ⚙️🗄️Link para o código (repositório Github) do back-end:
+https://github.com/dig-ie/bolsa-Node.js-NestJS-api
 ---
 
 ## 🧩 Funcionalidades
@@ -31,9 +32,7 @@ Simulador educacional e visual de mercado financeiro, com cotações fictícias 
 - **Maria Giulia Martins** — Designer UX/UI
 - **Arthur Vinícius** — Frontend Next.js
 - **Pablo Santos** — Frontend Next.js
-- **Luiz Fernando Alves** - Frontend Next.js
 - **Brenno Felipe** — Backend Java/Spring
-- **Camilo Ariel** — Backend Java/Spring
 
 ---
 
@@ -71,6 +70,7 @@ Utilizado o padrão abaixo para manter o histórico limpo e compreensível:
 5. Abra um Pull Request 🚀
 
 ---
+## docker build -t valorim-frontend .
 
 ## 📬 Contato
 
