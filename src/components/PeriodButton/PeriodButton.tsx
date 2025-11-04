@@ -1,8 +1,9 @@
 "use client";
 import React from "react";
+import { PeriodChartProps } from "./PeriodButtonProps";
 
 
-const PeriodButton: React.FC<PeriodButtonProps> = ({ label, selected, onClick }) => {
+const PeriodButton: React.FC<PeriodChartProps> = ({ label, selected, onClick }) => {
     return (
         <button className="font-semibold "
             onClick={onClick}
