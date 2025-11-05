@@ -13,6 +13,7 @@ export default function HomePageContent({
         <h2 className="text-xl font-bold">{description}</h2>
       </div>
 
+
       <button className="border border-black text-xl font-bold rounded-xl w-[320px] h-[58px]">
         {buttonTitle}
       </button>
@@ -28,3 +29,5 @@ export default function HomePageContent({
     </main>
   );
 }
+
+// TODO COMPONETIZAR O BUTTON

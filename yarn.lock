@@ -992,7 +992,7 @@ __metadata:
   dependencies:
     "@eslint-community/regexpp": "npm:^4.10.0"
     "@typescript-eslint/scope-manager": "npm:8.46.2"
-    "@typescript-eslint/type-utils": "npm:8.46.2"
+    "@typescript-eslint/type-utils": "npm:8.46.2"			
     "@typescript-eslint/utils": "npm:8.46.2"
     "@typescript-eslint/visitor-keys": "npm:8.46.2"
     graphemer: "npm:^1.4.0"
