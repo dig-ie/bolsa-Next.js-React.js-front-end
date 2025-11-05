@@ -1,0 +1,8 @@
+node_modules
+pnpm-store
+.dockerignore
+Dockerfile
+.git
+.gitignore
+.next/cache
+.env.local

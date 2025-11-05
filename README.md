@@ -1,5 +1,4 @@
-# 📈✅ Simulador de Bolsa de Valores - Valorim
-
+# 📈✅ Valorim - Simulador de Bolsa de Valores
 Simulador educacional e visual de mercado financeiro, com cotações fictícias variando em tempo real. Ideal para praticar conceitos como compra, venda e análise de gráficos de ativos.
 
 ---
@@ -71,6 +70,7 @@ Utilizado o padrão abaixo para manter o histórico limpo e compreensível:
 5. Abra um Pull Request 🚀
 
 ---
+## docker build -t valorim-frontend .
 
 ## 📬 Contato
 

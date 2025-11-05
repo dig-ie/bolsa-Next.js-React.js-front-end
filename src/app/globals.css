@@ -13,4 +13,7 @@
   --color-fundoEscuro: #1E272E;         /* Azul Marinho Escuro */
   --color-backgroundClaro: #F5F6FA;     /* Cinza Claro */
   --color-textClaro: #333333;           /* Cinza Escuro */
+  --color-secondaryBackground: #F3F0E7; /* Bege Claro */
+  --color-secondaryText: #E5E5E5;       /* Platinum */
+  --color-linkBlue: #225991;            /* Azul */
 }
