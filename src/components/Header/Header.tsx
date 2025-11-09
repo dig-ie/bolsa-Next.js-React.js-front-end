@@ -10,7 +10,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = () => {
   return (
     <header>
-      <nav className="mt-[1rem] flex items-center justify-between w-full h-16 px-4 bg-transparent ">
+      <nav className="bg-lightBackground flex items-center justify-between w-full h-16 px-4  ">
         <div className="flex items-center gap-4">
           <Image
             alt="valorim-icone"

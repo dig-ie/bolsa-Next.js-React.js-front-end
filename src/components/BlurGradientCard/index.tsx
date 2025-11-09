@@ -11,8 +11,8 @@ type BlurGradientCardProps = {
 
 export default function BlurGradientCard({
   className = "",
-  blurClassName = "bg-gradient-to-b from-backgroundClaro via-primaryGreen/60 to-backgroundClaro",
-  gradientClassName = "bg-gradient-to-b from-backgroundClaro via-transparent to-backgroundClaro",
+  blurClassName = "bg-gradient-to-b from-lightBackground via-primaryGreen/60 to-lightBackground",
+  gradientClassName = "bg-gradient-to-b from-lightBackground via-transparent to-lightBackground",
   children,
   innerClassName = "relative h-[85%] w-[85%] z-20 mx-auto rounded-[12px]",
   height = "h-[400px]",

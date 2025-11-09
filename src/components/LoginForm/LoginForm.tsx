@@ -34,7 +34,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
     <div className="flex flex-col">
       <label
         htmlFor="email"
-        className="font-bold text-2xl text-textClaro sm:text-lg md:text-xl lg:text-xl text-left lg:mb-1"
+        className="font-bold text-2xl text-darkText sm:text-lg md:text-xl lg:text-xl text-left lg:mb-1"
       >
         {emailLabel}:
       </label>
@@ -42,7 +42,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         id="email"
         type="email"
         placeholder={emailPlaceholder}
-        className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-backgroundClaro lg:shadow-md/40"
+        className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-lightBackground lg:shadow-md/40"
         autoComplete="email"
       />
     </div>
@@ -52,7 +52,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
     <div className="flex flex-col">
       <label
         htmlFor="senha"
-        className="font-bold text-2xl text-textClaro sm:text-lg md:text-xl lg:text-xl text-left lg:mb-1"
+        className="font-bold text-2xl text-darkText sm:text-lg md:text-xl lg:text-xl text-left lg:mb-1"
       >
         {passwordLabel}:
       </label>
@@ -60,7 +60,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         id="senha"
         type="password"
         placeholder={passwordPlaceholder}
-        className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-backgroundClaro lg:shadow-md/40"
+        className="px-4 py-2 rounded-2xl font-normal bg-secondaryText text-sm mt-2 w-[320px] lg:w-[415px] max-w-md lg:mt-1 lg:rounded-[9px] lg:bg-lightBackground lg:shadow-md/40"
         autoComplete="current-password"
       />
     </div>
