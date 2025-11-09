@@ -14,7 +14,7 @@ const inputWrapper = tv({
 });
 
 export type FormInputWithIconProps = FormInputProps & {
-  icon: ReactNode;
+  icon?: ReactNode;
   iconClassName?: string;
 };
 

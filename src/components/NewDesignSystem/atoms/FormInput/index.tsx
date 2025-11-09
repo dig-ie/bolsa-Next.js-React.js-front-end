@@ -4,13 +4,9 @@ import { tv } from "tailwind-variants";
 const input = tv({
   variants: {
     intent: {
-      default: "",
+      default: " ",
       error: "border-alertSucess focus:ring-alertError",
       success: "border-green-500 focus:ring-alertSuccess",
-    },
-    size: {
-      md: "text-sm py-2",
-      lg: "text-base py-3",
     },
   },
   defaultVariants: {
@@ -27,13 +23,13 @@ export type FormInputProps = React.ComponentPropsWithoutRef<"input"> &
 export function FormInput({
   className,
   intent,
-  size,
+
   ...props
 }: FormInputProps) {
   return (
     <input
       className={
-        input({ intent, size, className }) +
+        input({ intent, className }) +
         ` w-full
     rounded-md
     border-none
