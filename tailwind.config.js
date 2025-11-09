@@ -1,6 +1,9 @@
 module.exports = {
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-roboto)", "sans-serif"],
+      },
       colors: {
         customBlue: "#1e40af",
         primaryGreen: "#2ecc71", // Verde

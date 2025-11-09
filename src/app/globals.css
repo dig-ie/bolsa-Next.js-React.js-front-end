@@ -3,9 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  font-family: var(--font-roboto), sans-serif;
 }
 @theme inline {
   --color-primaryGreen: #2ecc71; /* Verde */
+  --color-secondaryGreen: #006b36; /* Verde Mais Escuro */
   --color-secondaryColor: #2c3e50; /* Grafite */
   --color-alertColor: #f1c40f; /* Âmbar */
   --color-alertError: #e74c3c; /* Vermelho */
