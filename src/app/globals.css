@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFFFF;
+  --background: #ffffff;
   --foreground: #171717;
 }
 @theme inline {
-  --color-primaryGreen: #2ECC71;        /* Verde */
-  --color-secondaryColor: #2C3E50;      /* Grafite */
-  --color-alertColor: #F1C40F;          /* Âmbar */
-  --color-alertError: #E74C3C;          /* Vermelho */
-  --color-alertSucess: #27AE60;         /* Verde escuro */
-  --color-fundoEscuro: #1E272E;         /* Azul Marinho Escuro */
-  --color-backgroundClaro: #F5F6FA;     /* Cinza Claro */
-  --color-textClaro: #333333;           /* Cinza Escuro */
-  --color-secondaryBackground: #F3F0E7; /* Bege Claro */
-  --color-secondaryText: #E5E5E5;       /* Platinum */
-  --color-linkBlue: #225991;            /* Azul */
+  --color-primaryGreen: #2ecc71; /* Verde */
+  --color-secondaryColor: #2c3e50; /* Grafite */
+  --color-alertColor: #f1c40f; /* Âmbar */
+  --color-alertError: #e74c3c; /* Vermelho */
+  --color-alertSucess: #27ae60; /* Verde escuro */
+  --color-darkBackground: #1e272e; /* Azul Marinho Escuro */
+  --color-lightBackground: #f5f6fa; /* Cinza Claro */
+  --color-darkText: #333333; /* Cinza Escuro */
+  --color-secondaryBackground: #f3f0e7; /* Bege Claro */
+  --color-secondaryText: #e5e5e5; /* Platinum */
+  --color-linkBlue: #225991; /* Azul */
 }
