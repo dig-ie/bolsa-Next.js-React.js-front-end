@@ -1,4 +1,7 @@
-import { FormLabelProps } from "./props";
+type FormLabelProps = {
+  text: string;
+  required?: boolean;
+};
 
 export function FormLabel({
   text = "default",
