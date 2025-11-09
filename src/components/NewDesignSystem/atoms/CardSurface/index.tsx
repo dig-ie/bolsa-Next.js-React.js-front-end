@@ -32,7 +32,6 @@ const cardSurface = tv({
 type CardSurfaceVariants = Parameters<typeof cardSurface>[0];
 type CardSurfaceProps = CardSurfaceVariants & {
   children: React.ReactNode;
-  className?: string;
 };
 
 export function CardSurface({
