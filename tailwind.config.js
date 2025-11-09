@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-roboto)", "sans-serif"],
+        sans: ["var(--font-roboto-flex)", "sans-serif"],
       },
       colors: {
         customBlue: "#1e40af",

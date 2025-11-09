@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import BottomNav from "@/components/Layout/BottomNavBar";
 
-const roboto = Roboto({
+const robotoFlex = Roboto_Flex({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-roboto",
+  variable: "--font-roboto-flex",
   weight: ["400", "500", "700"],
 });
 
@@ -26,9 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" className={roboto.variable}>
+    <html lang="pt-br" className={robotoFlex.variable}>
       <body
-        className={`${roboto.variable} antialiased bg-(--color-primaryGreen)`}
+        className={`${robotoFlex.variable} antialiased bg-(--color-primaryGreen)`}
       >
         <div className="">
           <div className="">{children}</div>

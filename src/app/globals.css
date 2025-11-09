@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  font-family: var(--font-roboto), sans-serif;
+  font-family: var(--font-roboto-flex), sans-serif;
 }
 @theme inline {
   --color-primaryGreen: #2ecc71; /* Verde */
