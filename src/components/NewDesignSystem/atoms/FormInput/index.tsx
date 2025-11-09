@@ -2,7 +2,6 @@
 import { tv } from "tailwind-variants";
 
 const input = tv({
-  base: ``,
   variants: {
     intent: {
       default: "",
@@ -10,7 +9,6 @@ const input = tv({
       success: "border-green-500 focus:ring-alertSuccess",
     },
     size: {
-      sm: "text-xs py-1",
       md: "text-sm py-2",
       lg: "text-base py-3",
     },
