@@ -2,7 +2,7 @@
 import { tv } from "tailwind-variants";
 
 const primaryButton = tv({
-  base: `font-bold text-xl rounded-lg`,
+  base: `font-bold text-xl rounded-xl`,
   variants: {
     size: { md: "h-12 w-36", lg: "h-13 w-68" },
     colors: {
@@ -15,7 +15,7 @@ const primaryButton = tv({
 
 type PrimaryButtonVariants = Parameters<typeof primaryButton>[0];
 
-export type PrimaryButtonProps = React.ComponentPropsWithoutRef<"button"> &
+type PrimaryButtonProps = React.ComponentPropsWithoutRef<"button"> &
   PrimaryButtonVariants;
 
 export function PrimaryButton({
