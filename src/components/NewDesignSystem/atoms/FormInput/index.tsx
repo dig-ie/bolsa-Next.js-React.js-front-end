@@ -2,6 +2,17 @@
 import { tv } from "tailwind-variants";
 
 const input = tv({
+  base: ` w-full
+    rounded-md
+    border-none
+    bg-secondaryText
+    px-3 py-2
+    text-sm
+    placeholder-gray-400
+    focus:outline-none
+    lg:focus:ring-1 focus:ring-primary
+    lg:focus:border-transparent
+    transition opacity-35 min-h-[52px]`,
   variants: {
     intent: {
       default: " ",
@@ -26,23 +37,5 @@ export function FormInput({
 
   ...props
 }: FormInputProps) {
-  return (
-    <input
-      className={
-        input({ intent, className }) +
-        ` w-full
-    rounded-md
-    border-none
-    bg-secondaryText
-    px-3 py-2
-    text-sm
-    placeholder-gray-400
-    focus:outline-none
-    lg:focus:ring-1 focus:ring-primary
-    lg:focus:border-transparent
-    transition opacity-35`
-      }
-      {...props}
-    />
-  );
+  return <input className={input({ intent, className })} {...props} />;
 }
