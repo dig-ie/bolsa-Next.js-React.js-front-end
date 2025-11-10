@@ -48,14 +48,14 @@ export default function LoginPage() {
           {/* right side desktop version */}
           <div className="lg:w-[40vw] h-[110vh] xl:w-[70vw] bg-secondaryColor rounded-tl-[75px] rounded-bl-[75px] justify-items-center flex flex-col items-center ml-auto">
             <div className="flex flex-col items-start mb-3 mt-20 justify-center">
-              <span className="text-left text-backgroundClaro font-bold italic text-3xl">
+              <span className="text-left text-lightBackground font-bold italic text-3xl">
                 O mercado financeiro{" "}
               </span>
-              <span className="ml-10  text-backgroundClaro font-bold italic text-3xl">
+              <span className="ml-10  text-lightBackground font-bold italic text-3xl">
                 ao seu alcance.
               </span>
             </div>
-            <div className="w-[80%] h-[50vh] bg-backgroundClaro rounded-[50px]"></div>
+            <div className="w-[80%] h-[50vh] bg-lightBackground rounded-[50px]"></div>
           </div>
         </div>
       </div>
