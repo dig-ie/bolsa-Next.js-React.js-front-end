@@ -2,22 +2,28 @@
 import { tv } from "tailwind-variants";
 
 const input = tv({
-  base: ` w-full
+  base: `
+    w-full
     rounded-md
-    border-none
+    border border-transparent
     bg-secondaryText
     px-3 py-2
     text-sm
     placeholder-gray-400
     focus:outline-none
-    lg:focus:ring-1 focus:ring-primary
-    lg:focus:border-transparent
-    transition opacity-35 min-h-[52px]`,
+    focus:ring-1 focus:ring-primary
+    transition opacity-35 min-h-[52px]
+  `,
   variants: {
     intent: {
-      default: " ",
-      error: "border-alertSucess focus:ring-alertError",
-      success: "border-green-500 focus:ring-alertSuccess",
+      default: "",
+      error: "border-red-500 focus:ring-red-500",
+      success: "border-green-500 focus:ring-green-500",
+    },
+    size: {
+      sm: "text-xs py-1",
+      md: "text-sm py-2",
+      lg: "text-base py-3",
     },
   },
   defaultVariants: {
