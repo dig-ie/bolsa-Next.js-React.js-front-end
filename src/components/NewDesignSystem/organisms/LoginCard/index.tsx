@@ -21,15 +21,17 @@ export function LoginCard({ className, ...props }: LoginCardProps) {
         body: JSON.stringify({ email, password }),
       });
 
+      const body = await res.json().catch(() => null);
+
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
+        setError(body?.message || "Credenciais inválidas");
+        return;
       }
 
-      const data = await res.json();
-      console.log(data);
+      alert("Login realizado com sucesso!");
     } catch (err: unknown) {
       if (err instanceof Error) {
-        setError(err.message);
+        setError("erro" + err.message);
       } else {
         setError("Erro inesperado");
       }
@@ -39,7 +41,7 @@ export function LoginCard({ className, ...props }: LoginCardProps) {
   }
   return (
     <CardSurface className={`mx-1.5 h-[70vh] pt-14 pb-4 ${className}`}>
-      <LoginForm onSubmit={handleLogin} />
+      <LoginForm onSubmit={handleLogin} loading={loading} apiError={error} />
     </CardSurface>
   );
 }
