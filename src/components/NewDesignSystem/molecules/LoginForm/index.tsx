@@ -7,16 +7,17 @@ import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
 type LoginFormProps = {
-  onSubmit: (email: string, password: string) => void;
+  onSubmit: (email: string, password: string) => Promise<void>;
   loading?: boolean;
+  apiError?: string | null;
 };
 
-export function LoginForm({ onSubmit, loading }: LoginFormProps) {
+export function LoginForm({ onSubmit, loading, apiError }: LoginFormProps) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [apiError, setApiError] = useState("");
 
   function validate() {
     let ok = true;
@@ -40,19 +41,15 @@ export function LoginForm({ onSubmit, loading }: LoginFormProps) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
     if (!validate()) return;
 
-    try {
-      await onSubmit(email, password);
-
-      setApiError("");
-    } catch (err) {
-      setApiError("E-mail ou senha incorretos");
-    }
+    await onSubmit(email, password);
   }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-8 w-full">
+      {/* Error vindo da API */}
       {apiError && (
         <p className="text-red-500 text-sm font-semibold text-center">
           {apiError}
@@ -85,10 +82,6 @@ export function LoginForm({ onSubmit, loading }: LoginFormProps) {
         size="lg"
         disabled={loading}
         className="self-center"
-        onClick={() => {
-          console.log("email error:", emailError);
-          console.log("clicado");
-        }}
       >
         {loading ? <Loader2 className="animate-spin m-auto" /> : "Entrar"}
       </PrimaryButton>
