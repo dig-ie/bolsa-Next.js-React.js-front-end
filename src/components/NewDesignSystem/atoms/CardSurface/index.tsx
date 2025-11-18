@@ -11,12 +11,14 @@ const cardSurface = tv({
       4: "p-4",
       6: "p-6",
     },
+
     variant: {
       default: "",
       outlined: "border border-gray-200",
       subtle: "bg-gray-50",
     },
     radius: {
+      none: "rounded-none",
       sm: "rounded-md",
       md: "rounded-xl",
       lg: "rounded-2xl",

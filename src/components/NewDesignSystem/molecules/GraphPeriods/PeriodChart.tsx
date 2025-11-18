@@ -12,10 +12,23 @@ import {
 } from "recharts";
 import { PeriodChartProps } from "./PeriodChartProps";
 import { CardSurface } from "../../atoms/CardSurface";
+import PeriodButton from "../../atoms/PeriodButton/PeriodButton";
 
 export default function PeriodChart({ period, data }: PeriodChartProps) {
   return (
     <CardSurface radius="none" className="w-full max-w-2xl  mx-auto">
+      <div className="flex justify-center mt-10">
+        <div className="flex bg-white rounded-t-2xl  w-md p-2  justify-between overflow-hidden ">
+          {periods.map((period) => (
+            <PeriodButton
+              key={period}
+              label={period}
+              selected={period === selectedPeriod}
+              onClick={() => setSelectedPeriod(period)}
+            />
+          ))}
+        </div>
+      </div>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={data}

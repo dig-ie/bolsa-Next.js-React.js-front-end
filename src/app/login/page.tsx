@@ -2,7 +2,7 @@ import { CardSurface } from "@/components/NewDesignSystem/atoms/CardSurface";
 import { FormInput } from "@/components/NewDesignSystem/atoms/FormInput";
 import { FormLabel } from "@/components/NewDesignSystem/atoms/FormLabel";
 import { PrimaryButton } from "@/components/NewDesignSystem/atoms/PrimaryButton";
-import { AuthButton } from "@/components/NewDesignSystem/molecules/AuthButton/inde";
+import { AuthButton } from "@/components/NewDesignSystem/molecules/AuthButton";
 import { FormInputPassword } from "@/components/NewDesignSystem/molecules/FormInputPassword";
 import { FormInputWithIcon } from "@/components/NewDesignSystem/molecules/FormInputWithIcon";
 import { PasswordRecoveryCard } from "@/components/NewDesignSystem/organisms/PasswordRecoveryCard";
