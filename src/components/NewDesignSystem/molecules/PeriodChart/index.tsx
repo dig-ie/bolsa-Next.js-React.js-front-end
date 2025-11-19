@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   BarChart,
   Bar,
@@ -10,15 +10,32 @@ import {
   ReferenceLine,
   ResponsiveContainer,
 } from "recharts";
-import { PeriodChartProps } from "./PeriodChartProps";
+
 import { CardSurface } from "../../atoms/CardSurface";
 import PeriodButton from "../../atoms/PeriodButton/PeriodButton";
+import { PeriodChartProps, Period } from "./props";
 
-export default function PeriodChart({ period, data }: PeriodChartProps) {
+export default function PeriodChart({
+  data,
+  defaultPeriod = "Diário",
+}: PeriodChartProps) {
+  const [selectedPeriod, setSelectedPeriod] = useState<Period>(defaultPeriod);
+
+  const periods: Period[] = ["Diário", "Semanal", "Mensal", "Anual"];
+
+  const selectedData =
+    selectedPeriod === "Diário"
+      ? data.daily
+      : selectedPeriod === "Semanal"
+      ? data.weekly
+      : selectedPeriod === "Mensal"
+      ? data.monthly
+      : data.yearly;
+
   return (
-    <CardSurface radius="none" className="w-full max-w-2xl  mx-auto">
-      <div className="flex justify-center mt-10">
-        <div className="flex bg-white rounded-t-2xl  w-md p-2  justify-between overflow-hidden ">
+    <CardSurface className="w-full max-w-2xl mx-auto" p={0}>
+      <div className="flex justify-center max-w-full rounded-xl w-full">
+        <div className="flex rounded-t-2xl  p-2 justify-between overflow-hidden  bg-neutralGray/25 rounded-xl w-full font-light">
           {periods.map((period) => (
             <PeriodButton
               key={period}
@@ -29,9 +46,10 @@ export default function PeriodChart({ period, data }: PeriodChartProps) {
           ))}
         </div>
       </div>
+
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
-          data={data}
+          data={selectedData}
           barCategoryGap="30%"
           margin={{ top: 10, left: 15 }}
         >
@@ -45,6 +63,7 @@ export default function PeriodChart({ period, data }: PeriodChartProps) {
           />
           <Tooltip />
           <ReferenceLine y={0} stroke="#000" />
+
           <Bar
             dataKey="pv"
             fill="#2ECC71"
@@ -54,6 +73,7 @@ export default function PeriodChart({ period, data }: PeriodChartProps) {
             animationDuration={1000}
             animationEasing="ease-in-out"
           />
+
           <Bar
             dataKey="uv"
             fill="#2C3E50"
