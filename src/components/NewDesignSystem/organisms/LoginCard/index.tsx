@@ -14,12 +14,15 @@ export function LoginCard({ className, ...props }: LoginCardProps) {
     setError(null);
 
     try {
-      const res = await fetch("http://localhost:3000/auth/login", {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      const res = await fetch(
+        "https://bolsa-node-js-nestjs-back-end.onrender.com/auth/login",
+        {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const body = await res.json().catch(() => null);
 
