@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import PeriodButton from "@/components/NewDesignSystem/atoms/PeriodButton/PeriodButton";
 import BalanceCard from "@/components/NewDesignSystem/molecules/BalanceCard/BalanceCard";
 import ActionsFavorites from "@/components/NewDesignSystem/molecules/ActionsFavorites";
-import PeriodChart from "@/components/NewDesignSystem/molecules/PeriodChart";
 import { Bell } from "lucide-react";
 import { BiBox } from "react-icons/bi";
 import { ActionsFavoritesMocks } from "@/mocks/mainDashboard";

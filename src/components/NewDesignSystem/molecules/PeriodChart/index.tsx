@@ -14,6 +14,7 @@ import {
 import { CardSurface } from "../../atoms/CardSurface";
 import PeriodButton from "../../atoms/PeriodButton/PeriodButton";
 import { PeriodChartProps, Period } from "./props";
+import { dailyData } from "@/mocks/mainDashboard";
 
 export default function PeriodChart({
   data,
@@ -23,35 +24,62 @@ export default function PeriodChart({
 
   const periods: Period[] = ["Diário", "Semanal", "Mensal", "Anual"];
 
+  // Map dos dias (Sunday = 0)
+  const dayMap = [
+    "Domingo",
+    "Segunda-Feira",
+    "Terça-Feira",
+    "Quarta-Feira",
+    "Quinta-Feira",
+    "Sexta-Feira",
+    "Sábado",
+  ];
+
+  const todayIndex = new Date().getDay();
+  const todayName = dayMap[todayIndex];
+
+  // Filtra o array para pegar só o dia atual
+  const todayData = dailyData.filter((d) => d.name === todayName);
+
+  // Seleciona o dataset final
   const selectedData =
     selectedPeriod === "Diário"
-      ? data.daily
+      ? todayData
       : selectedPeriod === "Semanal"
-      ? data.weekly
-      : selectedPeriod === "Mensal"
-      ? data.monthly
-      : data.yearly;
+        ? data.weekly
+        : selectedPeriod === "Mensal"
+          ? data.monthly
+          : data.yearly;
 
   return (
-    <CardSurface className="w-full max-w-2xl mx-auto" p={0}>
-      <div className="flex justify-center max-w-full rounded-xl w-full">
-        <div className="flex rounded-t-2xl  p-2 justify-between overflow-hidden  bg-neutralGray/25 rounded-xl w-full font-light">
-          {periods.map((period) => (
-            <PeriodButton
-              key={period}
-              label={period}
-              selected={period === selectedPeriod}
-              onClick={() => setSelectedPeriod(period)}
-            />
-          ))}
-        </div>
+    <CardSurface
+      className="w-[357px]   mx-auto"
+      p={0}
+      radius="txxxl"
+      radiusbottom="bxxl"
+    >
+      <div className="flex      bg-neutralGray/25 rounded-t-4xl   font-light">
+        {periods.map((period) => (
+          <PeriodButton
+            key={period}
+            label={period}
+            selected={period === selectedPeriod}
+            onClick={() => setSelectedPeriod(period)}
+          />
+        ))}
       </div>
+      {/*
+      {selectedPeriod === "Diário" && (
+        <p className="text-center text-sm text-gray-500 mt-1">
+          {new Date().toLocaleDateString("pt-BR")}
+        </p>
+      )}*/}
 
       <ResponsiveContainer width="100%" height={300}>
         <BarChart
           data={selectedData}
           barCategoryGap="30%"
-          margin={{ top: 10, left: 15 }}
+          margin={{ right: 20, left: 20, top: 30 }}
         >
           <CartesianGrid strokeDasharray="3 3" fill="#FDFCFC" />
           <XAxis

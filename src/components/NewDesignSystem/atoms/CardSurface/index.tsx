@@ -22,6 +22,11 @@ const cardSurface = tv({
       sm: "rounded-md",
       md: "rounded-xl",
       lg: "rounded-2xl",
+      xxl: "rounded-2xl",
+      txxxl: "rounded-t-4xl",
+    },
+    radiusbottom: {
+      bxxl: "rounded-b-2xl",
     },
   },
   defaultVariants: {
