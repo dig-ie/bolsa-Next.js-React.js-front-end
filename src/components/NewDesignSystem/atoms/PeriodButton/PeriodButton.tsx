@@ -4,7 +4,7 @@ import { tv } from "tailwind-variants";
 import { PeriodButtonProps } from "./PeriodButtonProps";
 
 const periodButtonStyles = tv({
-  base: "font-black flex   p-2 rounded-2xl text-[16px] transition-colors",
+  base: "font-black flex  font-light p-2 rounded-2xl text-[16px] transition-colors",
   variants: {
     selected: {
       true: "bg-[#006B36] text-white",
