@@ -21,7 +21,7 @@ export function FormInputPassword({
   iconClassName,
   className,
   intent,
-  size,
+  fieldSize,
   ...props
 }: FormInputPasswordProps) {
   const [visible, setVisible] = useState(false);
@@ -31,7 +31,7 @@ export function FormInputPassword({
       <FormInput
         type={visible ? "text" : "password"}
         intent={intent}
-        size={size}
+        fieldSize={fieldSize}
         className={className}
         {...(props as React.ComponentPropsWithoutRef<"input">)}
       />

@@ -31,7 +31,7 @@ export default function NewDesignInstances() {
       {/* card login form */}
       <CardSurface className="w-full">
         <LoginForm
-          onSubmit={function (email: string, password: string): void {
+          onSubmit={function (email: string, password: string): Promise<void> {
             throw new Error("Function not implemented.");
           }}
         />

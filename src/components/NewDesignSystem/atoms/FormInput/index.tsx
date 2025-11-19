@@ -20,7 +20,7 @@ const input = tv({
       error: "border-red-500 focus:ring-red-500",
       success: "border-green-500 focus:ring-green-500",
     },
-    size: {
+    fieldSize: {
       sm: "text-xs py-1",
       md: "text-sm py-2",
       lg: "text-base py-3",
@@ -28,7 +28,7 @@ const input = tv({
   },
   defaultVariants: {
     intent: "default",
-    size: "md",
+    fieldSize: "md",
   },
 });
 
@@ -40,8 +40,10 @@ export type FormInputProps = React.ComponentPropsWithoutRef<"input"> &
 export function FormInput({
   className,
   intent,
-
+  fieldSize,
   ...props
 }: FormInputProps) {
-  return <input className={input({ intent, className })} {...props} />;
+  return (
+    <input className={input({ fieldSize, intent, className })} {...props} />
+  );
 }
