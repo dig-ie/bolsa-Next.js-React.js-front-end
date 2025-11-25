@@ -4,7 +4,7 @@ import { tv } from "tailwind-variants";
 import { PeriodButtonProps } from "./PeriodButtonProps";
 
 const periodButtonStyles = tv({
-  base: "font-black  font-light  w-80 p-4 justify-evenly  rounded-4xl text-[16px] transition-colors",
+  base: "font-black font-light w-80 p-4 justify-evenly rounded-4xl text-[16px] transition-colors",
   variants: {
     selected: {
       true: "bg-[#006B36] text-white",
@@ -16,16 +16,14 @@ const periodButtonStyles = tv({
   },
 });
 
-const PeriodButton: React.FC<PeriodButtonProps> = ({
+export default function PeriodButton({
   label,
   selected,
   onClick,
-}) => {
+}: PeriodButtonProps) {
   return (
     <button onClick={onClick} className={periodButtonStyles({ selected })}>
       {label}
     </button>
   );
-};
-
-export default PeriodButton;
+}

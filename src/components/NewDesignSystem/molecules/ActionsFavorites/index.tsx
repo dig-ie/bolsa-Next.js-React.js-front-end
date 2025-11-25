@@ -1,7 +1,7 @@
 import React from "react";
 import { ActionsFavoritesProps } from "./ActionsFavoritesProps";
 
-const ActionsFavorites: React.FC<ActionsFavoritesProps> = ({ actions }) => {
+export default function ActionsFavorites({ actions }: ActionsFavoritesProps) {
   return (
     // <div className="flex flex-col items-center gap-4 p-10 rounded-lg">
     //     <h2 className="self-start text-xl font-medium md:self-center">Ações favoritas:</h2>
@@ -34,6 +34,4 @@ const ActionsFavorites: React.FC<ActionsFavoritesProps> = ({ actions }) => {
       </h1>
     </div>
   );
-};
-
-export default ActionsFavorites;
+}

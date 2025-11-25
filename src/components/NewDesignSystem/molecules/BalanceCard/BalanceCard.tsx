@@ -2,10 +2,10 @@ import React from "react";
 import { BalanceCardProps } from "./BalanceCardProps.d";
 import { CardSurface } from "../../atoms/CardSurface";
 
-const BalanceCard: React.FC<BalanceCardProps> = ({
+export default function BalanceCard({
   balance,
   futureBalance,
-}) => {
+}: BalanceCardProps) {
   return (
     <CardSurface
       radius="md"
@@ -26,6 +26,4 @@ const BalanceCard: React.FC<BalanceCardProps> = ({
       </h2>
     </CardSurface>
   );
-};
-
-export default BalanceCard;
+}
